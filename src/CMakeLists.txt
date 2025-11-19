@@ -34,7 +34,7 @@ set(GEMM_COMMON_SRCS
 
 # Install headers so include files are available; no shared/static library is installed
 install(FILES ${CUDA_GEMM_HEADERS} DESTINATION include)
-
+ 
 add_executable(profile_cuda_gemm_fp32 ${GEMM_COMMON_SRCS} profile_cuda_gemm_fp32.cu)
 target_include_directories(profile_cuda_gemm_fp32 PUBLIC ${CUDA_GEMM_INCLUDE_DIRS})
 target_link_libraries(profile_cuda_gemm_fp32 PRIVATE CUDA::cublas)
