@@ -34,19 +34,13 @@ cmake -B build
 echo ""
 
 # Step 2: Build the project
-echo -e "${GREEN}[2/4] Building project (Release mode, parallel)...${NC}"
+echo -e "${GREEN}[2/3] Building project (Release mode, parallel)...${NC}"
 cmake --build build --config Release --parallel
 
 echo ""
 
-# Step 3: Install the project
-echo -e "${GREEN}[3/4] Installing project...${NC}"
-cmake --install build
-
-echo ""
-
-# Step 4: Run the executables
-echo -e "${GREEN}[4/4] Running GEMM profiling...${NC}"
+# Step 3: Run the executables
+echo -e "${GREEN}[3/3] Running GEMM profiling...${NC}"
 echo ""
 
 echo -e "${BLUE}Running FP32 GEMM profiling:${NC}"
