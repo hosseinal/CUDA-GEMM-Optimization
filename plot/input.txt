@@ -1,0 +1,346 @@
+Running FP32 GEMM profiling:
+----------------------------------------
+Device Name: NVIDIA RTX 2000 Ada Generation
+Memory Size: 15.6911 GB
+Peak Bandwitdh: 224.032 GB/s
+
+Matrix Size: M = 4096 N = 4096 K = 4096
+Matrix A: 4096 x 4096 Leading Dimension Size = 4096
+Matrix B: 4096 x 4096 Leading Dimension Size = 4096
+Matrix C: 4096 x 4096 Leading Dimension Size = 4096
+
+Custom GEMM Kernel V00
+cuBLAS GEMM Kernel Performance
+Latency: 23.724 ms
+Effective Bandwidth: 8.48621 GB/s
+Effective TFLOPS: 5.79325 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 2015.14 ms
+Effective Bandwidth: 0.0999072 GB/s
+Effective TFLOPS: 0.0682033 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 1.17729%
+
+Custom GEMM Kernel V01
+cuBLAS GEMM Kernel Performance
+Latency: 23.723 ms
+Effective Bandwidth: 8.48657 GB/s
+Effective TFLOPS: 5.7935 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 322.066 ms
+Effective Bandwidth: 0.625109 GB/s
+Effective TFLOPS: 0.426741 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 7.36587%
+
+Custom GEMM Kernel V02
+cuBLAS GEMM Kernel Performance
+Latency: 23.7189 ms
+Effective Bandwidth: 8.48803 GB/s
+Effective TFLOPS: 5.7945 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 210.938 ms
+Effective Bandwidth: 0.954436 GB/s
+Effective TFLOPS: 0.651561 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 11.2445%
+
+Custom GEMM Kernel V02 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 23.7168 ms
+Effective Bandwidth: 8.48878 GB/s
+Effective TFLOPS: 5.795 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 275.798 ms
+Effective Bandwidth: 0.729978 GB/s
+Effective TFLOPS: 0.498332 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 8.59934%
+
+Custom GEMM Kernel V03
+cuBLAS GEMM Kernel Performance
+Latency: 23.7107 ms
+Effective Bandwidth: 8.49095 GB/s
+Effective TFLOPS: 5.79649 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 66.8752 ms
+Effective Bandwidth: 3.01048 GB/s
+Effective TFLOPS: 2.05516 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 35.4552%
+
+Custom GEMM Kernel V03 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 23.7138 ms
+Effective Bandwidth: 8.48985 GB/s
+Effective TFLOPS: 5.79574 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 109.836 ms
+Effective Bandwidth: 1.83297 GB/s
+Effective TFLOPS: 1.25131 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 21.5901%
+
+Custom GEMM Kernel V04
+cuBLAS GEMM Kernel Performance
+Latency: 23.7199 ms
+Effective Bandwidth: 8.48765 GB/s
+Effective TFLOPS: 5.79424 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 40.9344 ms
+Effective Bandwidth: 4.91827 GB/s
+Effective TFLOPS: 3.35754 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 57.9462%
+
+Custom GEMM Kernel V04 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 23.7169 ms
+Effective Bandwidth: 8.48875 GB/s
+Effective TFLOPS: 5.79499 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 37.499 ms
+Effective Bandwidth: 5.36885 GB/s
+Effective TFLOPS: 3.66513 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 63.2466%
+
+Custom GEMM Kernel V05
+cuBLAS GEMM Kernel Performance
+Latency: 23.7087 ms
+Effective Bandwidth: 8.49169 GB/s
+Effective TFLOPS: 5.79699 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 42.3649 ms
+Effective Bandwidth: 4.7522 GB/s
+Effective TFLOPS: 3.24417 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 55.963%
+
+Custom GEMM Kernel V05 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 23.7159 ms
+Effective Bandwidth: 8.48911 GB/s
+Effective TFLOPS: 5.79523 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 26.9792 ms
+Effective Bandwidth: 7.46229 GB/s
+Effective TFLOPS: 5.09426 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 87.9043%
+
+Custom GEMM Kernel V06
+cuBLAS GEMM Kernel Performance
+Latency: 23.7106 ms
+Effective Bandwidth: 8.491 GB/s
+Effective TFLOPS: 5.79652 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 40.3507 ms
+Effective Bandwidth: 4.98942 GB/s
+Effective TFLOPS: 3.40611 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 58.7613%
+
+Custom GEMM Kernel V06 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 23.7097 ms
+Effective Bandwidth: 8.49133 GB/s
+Effective TFLOPS: 5.79675 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 25.8897 ms
+Effective Bandwidth: 7.77632 GB/s
+Effective TFLOPS: 5.30864 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 91.5795%
+
+Custom GEMM Kernel V06 Vectorized Double Buffered
+cuBLAS GEMM Kernel Performance
+Latency: 23.7199 ms
+Effective Bandwidth: 8.48768 GB/s
+Effective TFLOPS: 5.79425 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 35.241 ms
+Effective Bandwidth: 5.71286 GB/s
+Effective TFLOPS: 3.89998 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 67.3077%
+
+
+Running FP16 GEMM profiling:
+----------------------------------------
+Device Name: NVIDIA RTX 2000 Ada Generation
+Memory Size: 15.6911 GB
+Peak Bandwitdh: 224.032 GB/s
+
+Matrix Size: M = 4096 N = 4096 K = 4096
+Matrix A: 4096 x 4096 Leading Dimension Size = 4096
+Matrix B: 4096 x 4096 Leading Dimension Size = 4096
+Matrix C: 4096 x 4096 Leading Dimension Size = 4096
+
+Custom GEMM Kernel V00
+cuBLAS GEMM Kernel Performance
+Latency: 4.00691 ms
+Effective Bandwidth: 50.2448 GB/s
+Effective TFLOPS: 34.3005 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 2018.2 ms
+Effective Bandwidth: 0.0997557 GB/s
+Effective TFLOPS: 0.0680999 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 0.198539%
+
+Custom GEMM Kernel V01
+cuBLAS GEMM Kernel Performance
+Latency: 4.00998 ms
+Effective Bandwidth: 50.2063 GB/s
+Effective TFLOPS: 34.2742 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 303.428 ms
+Effective Bandwidth: 0.663508 GB/s
+Effective TFLOPS: 0.452955 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 1.32156%
+
+Custom GEMM Kernel V02
+cuBLAS GEMM Kernel Performance
+Latency: 4.00691 ms
+Effective Bandwidth: 50.2448 GB/s
+Effective TFLOPS: 34.3005 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 205.488 ms
+Effective Bandwidth: 0.979748 GB/s
+Effective TFLOPS: 0.668841 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 1.94995%
+
+Custom GEMM Kernel V02 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 4.00682 ms
+Effective Bandwidth: 50.246 GB/s
+Effective TFLOPS: 34.3013 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 267.815 ms
+Effective Bandwidth: 0.751738 GB/s
+Effective TFLOPS: 0.513186 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 1.49611%
+
+Custom GEMM Kernel V03
+cuBLAS GEMM Kernel Performance
+Latency: 4.00803 ms
+Effective Bandwidth: 50.2308 GB/s
+Effective TFLOPS: 34.2909 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 59.1114 ms
+Effective Bandwidth: 3.40588 GB/s
+Effective TFLOPS: 2.32508 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 6.78047%
+
+Custom GEMM Kernel V03 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 4.00691 ms
+Effective Bandwidth: 50.2448 GB/s
+Effective TFLOPS: 34.3005 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 132.655 ms
+Effective Bandwidth: 1.51767 GB/s
+Effective TFLOPS: 1.03606 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 3.02055%
+
+Custom GEMM Kernel V04
+cuBLAS GEMM Kernel Performance
+Latency: 4.00794 ms
+Effective Bandwidth: 50.232 GB/s
+Effective TFLOPS: 34.2917 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 24.2862 ms
+Effective Bandwidth: 8.28975 GB/s
+Effective TFLOPS: 5.65914 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 16.5029%
+
+Custom GEMM Kernel V04 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 4.00691 ms
+Effective Bandwidth: 50.2448 GB/s
+Effective TFLOPS: 34.3005 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 22.6111 ms
+Effective Bandwidth: 8.90387 GB/s
+Effective TFLOPS: 6.07837 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 17.721%
+
+Custom GEMM Kernel V05
+cuBLAS GEMM Kernel Performance
+Latency: 4.00589 ms
+Effective Bandwidth: 50.2577 GB/s
+Effective TFLOPS: 34.3092 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 27.4727 ms
+Effective Bandwidth: 7.32825 GB/s
+Effective TFLOPS: 5.00275 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 14.5814%
+
+Custom GEMM Kernel V05 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 4.00691 ms
+Effective Bandwidth: 50.2448 GB/s
+Effective TFLOPS: 34.3005 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 18.1483 ms
+Effective Bandwidth: 11.0934 GB/s
+Effective TFLOPS: 7.5731 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 22.0787%
+
+Custom GEMM Kernel V06
+cuBLAS GEMM Kernel Performance
+Latency: 4.00691 ms
+Effective Bandwidth: 50.2448 GB/s
+Effective TFLOPS: 34.3005 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 27.0807 ms
+Effective Bandwidth: 7.43432 GB/s
+Effective TFLOPS: 5.07516 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 14.7962%
+
+Custom GEMM Kernel V06 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 4.00486 ms
+Effective Bandwidth: 50.2705 GB/s
+Effective TFLOPS: 34.318 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 18.1145 ms
+Effective Bandwidth: 11.1141 GB/s
+Effective TFLOPS: 7.58725 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 22.1087%
+
+Custom GEMM Kernel V06 Vectorized Double Buffered
+cuBLAS GEMM Kernel Performance
+Latency: 4.00896 ms
+Effective Bandwidth: 50.2192 GB/s
+Effective TFLOPS: 34.2829 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 17.7181 ms
+Effective Bandwidth: 11.3628 GB/s
+Effective TFLOPS: 7.75697 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 22.6263%
+
+Custom GEMM Kernel V07
+cuBLAS GEMM Kernel Performance
+Latency: 4.00794 ms
+Effective Bandwidth: 50.232 GB/s
+Effective TFLOPS: 34.2917 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 15.3559 ms
+Effective Bandwidth: 13.1107 GB/s
+Effective TFLOPS: 8.95024 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 26.1003%
+
+Custom GEMM Kernel V07 Vectorized
+cuBLAS GEMM Kernel Performance
+Latency: 4.00794 ms
+Effective Bandwidth: 50.232 GB/s
+Effective TFLOPS: 34.2917 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 8.60467 ms
+Effective Bandwidth: 23.3974 GB/s
+Effective TFLOPS: 15.9726 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 46.5786%
+
+Custom GEMM Kernel V07 Vectorized Double Buffered
+cuBLAS GEMM Kernel Performance
+Latency: 4.00589 ms
+Effective Bandwidth: 50.2577 GB/s
+Effective TFLOPS: 34.3092 TFLOPS
+Custom GEMM Kernel Performance
+Latency: 10.5779 ms
+Effective Bandwidth: 19.0328 GB/s
+Effective TFLOPS: 12.993 TFLOPS
+Custom GEMM VS cuBLAS GEMM Performance: 37.8704%
+
+
+========================================
+Build and run completed successfully!
+========================================

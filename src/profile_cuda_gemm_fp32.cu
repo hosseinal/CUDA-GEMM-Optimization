@@ -4,7 +4,7 @@
 #include "cuda_gemm.hpp"
 #include "profile_utils.cuh"
 
-int main()
+int main(int argc, char** argv)
 {
     print_device_info();
 
@@ -14,20 +14,38 @@ int main()
     float const fp32_abs_tol{1.0e-3f};
     double const fp32_rel_tol{0.0e-4f};
 
-    constexpr size_t m{4096U};
-    constexpr size_t k{4096U};
-    constexpr size_t n{4096U};
+    // Defaults; can be overridden by command-line arguments: ./profile M K N
+    size_t m{4096U};
+    size_t k{4096U};
+    size_t n{4096U};
 
-    constexpr size_t lda{(k + 16U - 1U) / 16U * 16U};
-    constexpr size_t ldb{(n + 16U - 1U) / 16U * 16U};
-    constexpr size_t ldc{(n + 16U - 1U) / 16U * 16U};
+    if (argc >= 4)
+    {
+        try
+        {
+            m = std::stoull(std::string(argv[1]));
+            k = std::stoull(std::string(argv[2]));
+            n = std::stoull(std::string(argv[3]));
+        }
+        catch (std::exception& e)
+        {
+            std::cerr << "Invalid numeric arguments: " << e.what() << std::endl;
+            std::cerr << "Usage: " << argv[0] << " [M K N]" << std::endl;
+            return 1;
+        }
+    }
 
-    static_assert(lda >= k);
-    static_assert(ldb >= n);
-    static_assert(ldc >= n);
+    const size_t lda{(k + 16U - 1U) / 16U * 16U};
+    const size_t ldb{(n + 16U - 1U) / 16U * 16U};
+    const size_t ldc{(n + 16U - 1U) / 16U * 16U};
 
-    std::cout << "Matrix Size: " << "M = " << m << " N = " << n << " K = " << k
-              << std::endl;
+    if (lda < k || ldb < n || ldc < n)
+    {
+        std::cerr << "Computed leading dimensions are invalid for the given sizes." << std::endl;
+        return 1;
+    }
+
+    std::cout << "Matrix Size: " << "M = " << m << " N = " << n << " K = " << k << std::endl;
     std::cout << "Matrix A: " << m << " x " << k
               << " Leading Dimension Size = " << lda << std::endl;
     std::cout << "Matrix B: " << k << " x " << n
