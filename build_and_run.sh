@@ -71,24 +71,27 @@ echo ""
 echo -e "${BLUE}Running FP16 GEMM profiling:${NC}"
 echo "----------------------------------------"
 echo "FP 16" > ./profile_cuda_gemm_fp16_results.txt
+
 echo "Matrix Size: 512 512 32" >> ./profile_cuda_gemm_fp16_results.txt
-./build/src/profile_cuda_gemm_fp16 512 512 32 >> ./profile_cuda_gemm_fp16_results.txt
+
+echo "Matrix Size: 512 512 32" >> ./profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 512 512 128 >> ./profile_cuda_gemm_fp16_results.txt
 echo "Matrix Size: 512 512 64" >> ./profile_cuda_gemm_fp16_results.txt
-./build/src/profile_cuda_gemm_fp16 512 512 64 >> ./profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 512 512 128 >> ./profile_cuda_gemm_fp16_results.txt
 echo "Matrix Size: 512 512 128" >> ./profile_cuda_gemm_fp16_results.txt
 ./build/src/profile_cuda_gemm_fp16 512 512 128 >> ./profile_cuda_gemm_fp16_results.txt
 
 echo "Matrix Size: 1024 256 32" >> ./profile_cuda_gemm_fp16_results.txt
-./build/src/profile_cuda_gemm_fp16 1024 256 32 >> ./profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 1024 256 128 >> ./profile_cuda_gemm_fp16_results.txt
 echo "Matrix Size: 1024 256 64" >> ./profile_cuda_gemm_fp16_results.txt
-./build/src/profile_cuda_gemm_fp16 1024 256 64 >> ./profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 1024 256 128 >> ./profile_cuda_gemm_fp16_results.txt
 echo "Matrix Size: 1024 256 128" >> ./profile_cuda_gemm_fp16_results.txt
 ./build/src/profile_cuda_gemm_fp16 1024 256 128 >> ./profile_cuda_gemm_fp16_results.txt
 
 echo "Matrix Size: 2048 256 32" >> ./profile_cuda_gemm_fp16_results.txt
-./build/src/profile_cuda_gemm_fp16 2048 256 32 >> ./profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 2048 256 128 >> ./profile_cuda_gemm_fp16_results.txt
 echo "Matrix Size: 2048 256 64" >> ./profile_cuda_gemm_fp16_results.txt
-./build/src/profile_cuda_gemm_fp16 2048 256 64 >> ./profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 2048 256 128 >> ./profile_cuda_gemm_fp16_results.txt
 echo "Matrix Size: 2048 256 128" >> ./profile_cuda_gemm_fp16_results.txt
 ./build/src/profile_cuda_gemm_fp16 2048 256 128 >> ./profile_cuda_gemm_fp16_results.txt
 echo ""
