@@ -5,7 +5,7 @@
 #SBATCH --job-name="project"
 #SBATCH --nodes=1
 #SBATCH --output="project.%j.%N.out"
-#SBATCH -t 01:00:00
+#SBATCH -t 05:00:00
 ##################### SLURM (do not change) ^  #####################
 
 # Above are SLURM directives for job scheduling on a cluster,
@@ -39,46 +39,52 @@ cmake --build build --config Release --parallel
 
 echo ""
 
-# Step 3: Run the executables over requested parameter sweep
-echo -e "${GREEN}[3/3] Running GEMM profiling parameter sweep...${NC}"
+# Step 3: Run the executables
+echo -e "${GREEN}[3/3] Running GEMM profiling...${NC}"
 echo ""
 
-# Sizes to test: (M K N) tuples
-SIZES=("512 512 512" "1024 256 1024" "2048 256 2048")
+echo -e "${BLUE}Running FP32 GEMM profiling:${NC}"
+echo "----------------------------------------"
+echo "FP 32" > build/src/profile_cuda_gemm_fp32_results.txt
+echo "Matrix Size: 512 512 32" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 512 512 32 >> build/src/profile_cuda_gemm_fp32_results.txt
+echo "Matrix Size: 512 512 64" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 512 512 64 >> build/src/profile_cuda_gemm_fp32_results.txt
+echo "Matrix Size: 512 512 128" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 512 512 128 >> build/src/profile_cuda_gemm_fp32_results.txt
 
-# Block columns to test
-BCOLS=(32 64 128)
+echo "Matrix Size: 1024 1024 32" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 1024 1024 32 >> build/src/profile_cuda_gemm_fp32_results.txt
+echo "Matrix Size: 1024 1024 64" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 1024 1024 64 >> build/src/profile_cuda_gemm_fp32_results.txt
+echo "Matrix Size: 1024 1024 128" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 1024 1024 128 >> build/src/profile_cuda_gemm_fp32_results.txt
 
-# Create logs directory
-LOG_DIR=logs
-mkdir -p ${LOG_DIR}
+echo "Matrix Size: 2048 2048 32" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 2048 2048 32 >> build/src/profile_cuda_gemm_fp32_results.txt
+echo "Matrix Size: 2048 2048 64" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 2048 2048 64 >> build/src/profile_cuda_gemm_fp32_results.txt
+echo "Matrix Size: 2048 2048 128" >> build/src/profile_cuda_gemm_fp32_results.txt
+./build/src/profile_cuda_gemm_fp32 2048 2048 128 >> build/src/profile_cuda_gemm_fp32_results.txt
 
-FP32_BIN=./build/src/profile_cuda_gemm_fp32
-FP16_BIN=./build/src/profile_cuda_gemm_fp16
 
-if [ ! -x "${FP32_BIN}" ] || [ ! -x "${FP16_BIN}" ]; then
-	echo -e "${RED}One or both profile executables not found or not executable:${NC}"
-	echo "  Expected: ${FP32_BIN} and ${FP16_BIN}"
-	exit 1
-fi
+echo ""
+echo -e "${BLUE}Running FP16 GEMM profiling:${NC}"
+echo "----------------------------------------"
+echo "FP 16" > build/src/profile_cuda_gemm_fp16_results.txt
+echo "Matrix Size: 512 512 32" >> build/src/profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 512 512 32 >> build/src/profile_cuda_gemm_fp16_results.txt
+echo "Matrix Size: 512 512 64" >> build/src/profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 512 512 64 >> build/src/profile_cuda_gemm_fp16_results.txt
+echo "Matrix Size: 512 512 128" >> build/src/profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 512 512 128 >> build/src/profile_cuda_gemm_fp16_results.txt
 
-for size in "${SIZES[@]}"; do
-	read -r M K N <<< "${size}"
-	for b in "${BCOLS[@]}"; do
-		echo -e "${BLUE}Running FP32: M=${M} K=${K} N=${N} bCols=${b}${NC}"
-		echo "----------------------------------------"
-		LOGFILE=${LOG_DIR}/fp32_M${M}_K${K}_N${N}_b${b}.log
-		# Pass bCols as a fourth argument (program currently ignores extra args unless implemented)
-		${FP32_BIN} ${M} ${K} ${N} ${b} | tee "${LOGFILE}"
-
-		echo -e "${BLUE}Running FP16: M=${M} K=${K} N=${N} bCols=${b}${NC}"
-		echo "----------------------------------------"
-		LOGFILE=${LOG_DIR}/fp16_M${M}_K${K}_N${N}_b${b}.log
-		${FP16_BIN} ${M} ${K} ${N} ${b} | tee "${LOGFILE}"
-
-		echo ""
-	done
-done
+echo "Matrix Size: 1024 1024 32" >> build/src/profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 1024 1024 32 >> build/src/profile_cuda_gemm_fp16_results.txt
+echo "Matrix Size: 1024 1024 64" >> build/src/profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 1024 1024 64 >> build/src/profile_cuda_gemm_fp16_results.txt
+echo "Matrix Size: 1024 1024 128" >> build/src/profile_cuda_gemm_fp16_results.txt
+./build/src/profile_cuda_gemm_fp16 1024 1024 128 >> build/src/profile_cuda_gemm_fp16_results.txt
 
 echo ""
 echo -e "${GREEN}========================================${NC}"
